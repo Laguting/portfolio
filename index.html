@@ -28,6 +28,7 @@
             <li><a href="#about" class="hover-link">About</a></li>
             <li><a href="#experience" class="hover-link">Experience</a></li>
             <li><a href="#projects" class="hover-link">Projects</a></li>
+            <li><a href="#gallery" class="hover-link">Gallery</a></li>
             <li>
                 <button id="theme-toggle" class="hover-link" aria-label="Toggle Dark Mode"
                     style="background:none; border:none; color:inherit; display:flex; align-items:center; cursor:none;">
@@ -174,6 +175,91 @@
             </div>
         </section>
 
+        <!-- Gallery Section -->
+        <section id="gallery" class="section reveal">
+            <h2 class="section-title">SOFI AI Experience Gallery</h2>
+            <p class="section-subtitle-text">Moments, milestones, and technical workflows from my journey as an AI
+                Solutions Developer Intern & Junior Developer at SOFI AI Tech Solutions Inc.</p>
+            <div class="gallery-grid">
+                <div class="gallery-card interactive-card" data-index="0">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423024.jpg" alt="WOCEE" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Conference</span>
+                            <h3>WOCEE</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card interactive-card" data-index="1">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423025.jpg" alt="Interactive AI Chatbot Testing"
+                            loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Chatbots</span>
+                            <h3>Interactive AI Chatbot Testing</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card interactive-card" data-index="2">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423026.jpg"
+                            alt="Transition from QA Intern to AI Developer Intern" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">QA Intern to Developer Intern</span>
+                            <h3>Transition from QA Intern to AI Developer Intern</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card interactive-card" data-index="3">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423027.jpg" alt="Mirror Selfie with my co-interns"
+                            loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">SOFI TEAM</span>
+                            <h3>Mirror Selfie with my co-interns</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card interactive-card" data-index="4">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423028.jpg" alt="What mentorship looks like at SOFI"
+                            loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">SOFI TEAM</span>
+                            <h3>What mentorship looks like at SOFI</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card interactive-card" data-index="5">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423029.jpg" alt="A treat for the month" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">SOFI TEAM</span>
+                            <h3>A treat for the month</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card interactive-card" data-index="6">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423030.jpg" alt="WOCEE" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Conference</span>
+                            <h3>WOCEE</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-card interactive-card" data-index="7">
+                    <div class="gallery-img-wrapper">
+                        <img src="sofi-pics/6150081207677423031.jpg" alt="A breather" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">SOFI TEAM</span>
+                            <h3>A breather</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Skills & Education -->
         <section class="section double-column reveal" id="details">
             <div>
@@ -214,6 +300,17 @@
     <footer>
         <p>&copy; 2026 Maricon Jane G. Laguting.</p>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-prev" aria-label="Previous image"><i data-feather="chevron-left"></i></button>
+        <button class="lightbox-next" aria-label="Next image"><i data-feather="chevron-right"></i></button>
+        <div class="lightbox-content-wrapper">
+            <img class="lightbox-content" id="lightbox-img" src="" alt="">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
