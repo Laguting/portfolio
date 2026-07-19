@@ -248,12 +248,37 @@ if (typeof feather !== 'undefined') {
         });
     }
 
+    // Lightweight markdown-to-HTML converter for bot messages
+    function renderMarkdown(text) {
+        return text
+            // Bold **text**
+            .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+            // Italic *text*
+            .replace(/\*(.+?)\*/g, '<em>$1</em>')
+            // Inline code `code`
+            .replace(/`([^`]+)`/g, '<code>$1</code>')
+            // Bullet points: lines starting with - or *
+            .replace(/^[\-\*] (.+)/gm, '<li>$1</li>')
+            // Wrap consecutive <li> in <ul>
+            .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+            // Line breaks
+            .replace(/\n{2,}/g, '</p><p>')
+            .replace(/\n/g, '<br>');
+    }
+
     // Helper to append messages
     function appendMessage(text, sender) {
         if (!chatbotMessages) return;
         const messageDiv = document.createElement("div");
         messageDiv.classList.add("chat-message", sender);
-        messageDiv.innerHTML = `<p>${text}</p>`;
+        if (sender === 'bot') {
+            messageDiv.innerHTML = `<p>${renderMarkdown(text)}</p>`;
+        } else {
+            // User messages: plain text for security (no HTML injection)
+            const p = document.createElement('p');
+            p.textContent = text;
+            messageDiv.appendChild(p);
+        }
         chatbotMessages.appendChild(messageDiv);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
     }
