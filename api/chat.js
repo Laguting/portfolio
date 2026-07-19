@@ -67,12 +67,7 @@ module.exports = async (req, res) => {
         }
 
         // Load resume data
-        const dataPath = path.join(process.cwd(), 'api/resume_data.json');
-        if (!fs.existsSync(dataPath)) {
-            return res.status(500).json({ error: 'Resume database not generated. Run npm run generate-embeddings first.' });
-        }
-
-        const resumeChunks = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+        const resumeChunks = require('./resume_data.json');
         let retrievedChunks = [];
 
         // Check if API keys are set
