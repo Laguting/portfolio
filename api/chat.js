@@ -17,11 +17,11 @@ function keywordSearch(query, chunks) {
     const queryWords = query.toLowerCase()
         .split(/\W+/)
         .filter(w => w.length > 2 && !stopWords.has(w));
-        
+
     if (queryWords.length === 0) {
         return chunks.slice(0, 3); // Return first 3 chunks if query is too short
     }
-    
+
     const scored = chunks.map(chunk => {
         const text = (chunk.title + " " + chunk.content).toLowerCase();
         let score = 0;
@@ -32,7 +32,7 @@ function keywordSearch(query, chunks) {
         });
         return { ...chunk, score };
     });
-    
+
     // Sort by score descending
     const filtered = scored.filter(c => c.score > 0);
     if (filtered.length === 0) {
@@ -71,9 +71,11 @@ module.exports = async (req, res) => {
         if (!fs.existsSync(dataPath)) {
             return res.status(500).json({ error: 'Resume database not generated. Run npm run generate-embeddings first.' });
         }
-        
+
         const resumeChunks = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
         let retrievedChunks = [];
+
+        GEMINI_API_KEY = AQ.Ab8RN6JRc38eiwxNnhckrdq3bPgVox7hA4DXxiKqXt4ch5wcFQ
 
         // Check if API keys are set
         const geminiKey = process.env.GEMINI_API_KEY;
@@ -142,7 +144,7 @@ module.exports = async (req, res) => {
 
         // Construct System Context and User Prompt
         const contextText = retrievedChunks.map(c => `[${c.title}]:\n${c.content}`).join('\n\n');
-        
+
         const systemPrompt = `You are Maricon Jane G. Laguting's AI Portfolio Assistant.
 Use the following relevant parts of her resume to answer the user's question accurately, professionally, and concisely:
 
