@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maricon Jane G. Laguting | Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Maricon Jane G. Laguting, AI Solutions Developer & Computer Engineering Student">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="minimal-nav">
+        <div class="nav-brand">MJ.</div>
+        <ul class="nav-menu">
+            <li><a href="#about" class="hover-link">About</a></li>
+            <li><a href="#experience" class="hover-link">Experience</a></li>
+            <li><a href="#projects" class="hover-link">Projects</a></li>
+            <li>
+                <button id="theme-toggle" class="hover-link" aria-label="Toggle Dark Mode"
+                    style="background:none; border:none; color:inherit; display:flex; align-items:center; cursor:none;">
+                    <i data-feather="moon" id="theme-icon"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section id="about" class="hero section reveal">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-title">Maricon Jane <br> <span>Laguting</span></h1>
+            <p class="hero-subtitle">AI Solutions Developer & Computer Engineer.</p>
+
+            <div class="hero-contact">
+                <a href="mailto:lagutingmaricon@gmail.com" class="icon-link hover-link">
+                    <i data-feather="mail"></i>
+                    <span>lagutingmaricon@gmail.com</span>
+                </a>
+                <a href="tel:09923033890" class="icon-link hover-link">
+                    <i data-feather="phone"></i>
+                    <span>09923033890</span>
+                </a>
+                <span class="icon-link">
+                    <i data-feather="map-pin"></i>
+                    <span>Quezon City, Philippines</span>
+                </span>
+            </div>
+
+            <div class="hero-summary">
+                <p>
+                    I build intelligent systems and automate workflows. With hands-on experience in AI solutions
+                    development, Retrieval-Augmented Generation (RAG), and system automation, I bridge the gap between
+                    complex software engineering and practical, real-world AI applications.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section reveal">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+
+                <div class="exp-item interactive-card">
+                    <div class="exp-header">
+                        <div class="exp-role">Junior AI Solutions Developer</div>
+                        <div class="exp-date">Dec 2025 – Feb 2026</div>
+                    </div>
+                    <div class="exp-company">SOFI AI Tech Solutions Inc.</div>
+                    <div class="exp-details">
+                        <p>Contributed to system improvements for file content extraction, handling PDF ligatures and
+                            markups. Developed FAISS with OpenAI embeddings to optimize document retrieval. Created
+                            real-time Google Sheet monitoring systems for RAG updates and built AI chatbots handling
+                            100+ business inquiries.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item interactive-card">
+                    <div class="exp-header">
+                        <div class="exp-role">AI Solutions Developer Intern</div>
+                        <div class="exp-date">Aug 2025 – Oct 2025</div>
+                    </div>
+                    <div class="exp-company">SOFI AI Tech Solutions Inc.</div>
+                    <div class="exp-details">
+                        <p>Refined AI chatbots and conversational flows through prompt engineering. Implemented complex
+                            AI guardrails and integrated Google Sheets and Semaphore gateway for automated data fetching
+                            and SMS notifications. Designed advanced conversational triggers for CSR workflows.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item interactive-card">
+                    <div class="exp-header">
+                        <div class="exp-role">AI Quality Assurance Intern</div>
+                        <div class="exp-date">Jul 2025 – Sep 2025</div>
+                    </div>
+                    <div class="exp-company">SOFI AI Tech Solutions Inc.</div>
+                    <div class="exp-details">
+                        <p>Performed comprehensive QA testing on live web pages. Monitored AI performance and evaluated
+                            response consistency, providing actionable feedback to developers to refine systems.</p>
+                    </div>
+                </div>
+
+                <div class="exp-item interactive-card">
+                    <div class="exp-header">
+                        <div class="exp-role">Technical Support Intern</div>
+                        <div class="exp-date">Jul 2024 – Sep 2024</div>
+                    </div>
+                    <div class="exp-company">TTEC</div>
+                    <div class="exp-details">
+                        <p>Provided real-time technical support, resolved hardware issues, and executed system
+                            re-imaging. Managed hardware asset lifecycles and maintained detailed administrative
+                            records.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section reveal">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-grid">
+
+                <a href="#" class="project-box">
+                    <div class="project-icon"><i data-feather="activity"></i></div>
+                    <h3>IoT Health Management</h3>
+                    <p>Diagnostic system for healthcare facilities utilizing RAG with FAISS over 1000+ files to enhance
+                        symptom retrieval.</p>
+                    <div class="project-arrow"><i data-feather="arrow-up-right"></i></div>
+                </a>
+
+                <a href="#" class="project-box">
+                    <div class="project-icon"><i data-feather="cpu"></i></div>
+                    <h3>RAG-Based AI Assistant</h3>
+                    <p>Advanced chatbot system with semantic search, document ingestion, and context-aware responses
+                        using OpenAI embeddings.</p>
+                    <div class="project-arrow"><i data-feather="arrow-up-right"></i></div>
+                </a>
+
+                <a href="#" class="project-box">
+                    <div class="project-icon"><i data-feather="message-square"></i></div>
+                    <h3>AI Solution Chatbot</h3>
+                    <p>Conversational AI designed for workflow automation, state management, and Google Sheets dynamic
+                        data integration.</p>
+                    <div class="project-arrow"><i data-feather="arrow-up-right"></i></div>
+                </a>
+
+                <a href="#" class="project-box">
+                    <div class="project-icon"><i data-feather="coffee"></i></div>
+                    <h3>Tomas Morato Dining Hub</h3>
+                    <p>Engineered a chatbot to answer inquiries related to local restaurants and cafes in Tomas Morato.
+                    </p>
+                    <div class="project-arrow"><i data-feather="arrow-up-right"></i></div>
+                </a>
+
+                <a href="#" class="project-box">
+                    <div class="project-icon"><i data-feather="database"></i></div>
+                    <h3>Ink and Solace DBMS</h3>
+                    <p>Custom relational database management system built with PHP to handle complex publishing industry
+                        records securely.</p>
+                    <div class="project-arrow"><i data-feather="arrow-up-right"></i></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Skills & Education -->
+        <section class="section double-column reveal" id="details">
+            <div>
+                <h2 class="section-title">Expertise</h2>
+                <div class="skill-tags">
+                    <span>AI Solutions Development</span>
+                    <span>Retrieval-Augmented Generation (RAG)</span>
+                    <span>System Automation</span>
+                    <span>Prompt Engineering</span>
+                    <span>Vector Databases (FAISS)</span>
+                    <span>API Integrations</span>
+                    <span>IoT Systems</span>
+                    <span>Quality Assurance</span>
+                    <span>Python</span>
+                    <span>PHP</span>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="section-title">Education</h2>
+                <div class="edu-card">
+                    <h3>BS in Computer Engineering</h3>
+                    <p>Polytechnic University of the Philippines (2022 – 2026)</p>
+                    <ul class="cert-list">
+                        <li><i data-feather="award"></i> Cisco CCNA 1, 2 & 3 (2024-2025)</li>
+                    </ul>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/maricon-jane-g-laguting-8250522b7/" class="hover-link"><i
+                            data-feather="linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/Laguting" class="hover-link"><i data-feather="github"></i> GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Maricon Jane G. Laguting.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
