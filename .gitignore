@@ -1,7 +1,15 @@
 .vercel
+<<<<<<< HEAD
 LAGUTING, MARICON JANE G..pdf
 api
 scripts
 sofi-pics
 resume_text.txt
 .venv
+=======
+.LAGUTING, MARICON JANE G..pdf
+.api
+.scripts
+.sofi-pics
+.resume_text.txt
+>>>>>>> c63b67a7f434c88f99d839ce10b9960c4a38ab7d
