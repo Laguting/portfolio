@@ -174,7 +174,7 @@ INSTRUCTIONS:
             } else {
                 const errText = await genResponse.text();
                 console.error("Gemini Error:", errText);
-                return res.status(200).json({ reply: "⚠️ **Configuration Error:** The AI assistant failed to respond because the Gemini API key is invalid, expired, or was revoked by Google. Please generate a new key at Google AI Studio and update it in your Vercel Environment Variables." });
+                return res.status(200).json({ reply: `⚠️ **Configuration Error:** The Gemini API rejected the request. Details:\n\n\`\`\`json\n${errText}\n\`\`\`` });
             }
         } else if (openAIKey) {
             const genResponse = await fetch('https://api.openai.com/v1/chat/completions', {
