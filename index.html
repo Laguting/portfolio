@@ -284,7 +284,7 @@
                     <h3>BS in Computer Engineering</h3>
                     <p>Polytechnic University of the Philippines (2022 – 2026)</p>
                     <ul class="cert-list">
-                        <li><i data-feather="award"></i> Cisco CCNA 1, 2 & 3 (2024-2025)</li>
+                        <li><i data-feather="award"></i> Cisco CCNA 1, 2 & 3 (2025)</li>
                     </ul>
                 </div>
 
@@ -309,6 +309,41 @@
         <div class="lightbox-content-wrapper">
             <img class="lightbox-content" id="lightbox-img" src="" alt="">
             <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container" id="chatbot-container">
+        <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Open Chatbot">
+            <i data-feather="message-square" id="chatbot-toggle-icon"></i>
+        </button>
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar">MJ</div>
+                    <div>
+                        <h4 class="chatbot-title">Maricon's AI Assistant</h4>
+                        <span class="chatbot-status"><span class="status-dot"></span> Online</span>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbot-close" aria-label="Close Chatbot">&times;</button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="chat-message bot">
+                    <p>Hi! I'm Maricon's AI Assistant. Ask me anything about her work, skills, or experience!</p>
+                </div>
+            </div>
+            <div class="chatbot-suggestions">
+                <button class="suggestion-btn" data-question="What are your core skills?">What are your core skills?</button>
+                <button class="suggestion-btn" data-question="Tell me about your internship.">Tell me about your internship.</button>
+                <button class="suggestion-btn" data-question="What is your education?">What is your education?</button>
+            </div>
+            <form class="chatbot-input-area" id="chatbot-form">
+                <input type="text" id="chatbot-input" placeholder="Type a message..." required autocomplete="off">
+                <button type="submit" class="chatbot-send-btn" aria-label="Send Message">
+                    <i data-feather="send"></i>
+                </button>
+            </form>
         </div>
     </div>
 

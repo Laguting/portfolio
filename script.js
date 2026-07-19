@@ -223,4 +223,110 @@ if (typeof feather !== 'undefined') {
             showPrevImage();
         }
     });
+
+    // Chatbot Functionality
+    const chatbotContainer = document.getElementById("chatbot-container");
+    const chatbotToggle = document.getElementById("chatbot-toggle");
+    const chatbotClose = document.getElementById("chatbot-close");
+    const chatbotForm = document.getElementById("chatbot-form");
+    const chatbotInput = document.getElementById("chatbot-input");
+    const chatbotMessages = document.getElementById("chatbot-messages");
+    const suggestionBtns = document.querySelectorAll(".suggestion-btn");
+
+    if (chatbotToggle && chatbotContainer) {
+        chatbotToggle.addEventListener("click", () => {
+            chatbotContainer.classList.toggle("open");
+            if (chatbotContainer.classList.contains("open") && chatbotInput) {
+                setTimeout(() => chatbotInput.focus(), 300);
+            }
+        });
+    }
+
+    if (chatbotClose && chatbotContainer) {
+        chatbotClose.addEventListener("click", () => {
+            chatbotContainer.classList.remove("open");
+        });
+    }
+
+    // Helper to append messages
+    function appendMessage(text, sender) {
+        if (!chatbotMessages) return;
+        const messageDiv = document.createElement("div");
+        messageDiv.classList.add("chat-message", sender);
+        messageDiv.innerHTML = `<p>${text}</p>`;
+        chatbotMessages.appendChild(messageDiv);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Helper for typing indicator
+    let typingIndicatorElement = null;
+    function showTypingIndicator() {
+        if (!chatbotMessages || typingIndicatorElement) return;
+        
+        typingIndicatorElement = document.createElement("div");
+        typingIndicatorElement.classList.add("chat-message", "bot");
+        typingIndicatorElement.innerHTML = `
+            <div class="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        `;
+        chatbotMessages.appendChild(typingIndicatorElement);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+        if (typingIndicatorElement) {
+            typingIndicatorElement.remove();
+            typingIndicatorElement = null;
+        }
+    }
+
+    // Handle form submit
+    if (chatbotForm) {
+        chatbotForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const message = chatbotInput.value.trim();
+            if (!message) return;
+
+            appendMessage(message, "user");
+            chatbotInput.value = "";
+            showTypingIndicator();
+
+            try {
+                const response = await fetch("/api/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ message })
+                });
+
+                removeTypingIndicator();
+
+                if (!response.ok) {
+                    throw new Error("Failed to get response");
+                }
+
+                const data = await response.json();
+                appendMessage(data.reply, "bot");
+            } catch (error) {
+                removeTypingIndicator();
+                appendMessage("Sorry, I encountered an error connecting to the assistant. Please try again later.", "bot");
+                console.error("Chatbot Error:", error);
+            }
+        });
+    }
+
+    // Handle suggestion buttons
+    suggestionBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const question = btn.getAttribute("data-question");
+            if (question && chatbotInput && chatbotForm) {
+                chatbotInput.value = question;
+                chatbotForm.dispatchEvent(new Event("submit"));
+            }
+        });
+    });
 }
