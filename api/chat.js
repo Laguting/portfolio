@@ -162,7 +162,7 @@ INSTRUCTIONS:
                     ],
                     generationConfig: {
                         temperature: 0.5,
-                        maxOutputTokens: 250
+                        maxOutputTokens: 1024
                     }
                 })
             });
